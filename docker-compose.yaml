@@ -8,7 +8,7 @@ services:
     environment:
       # Database settings
       KC_DB: postgres
-      KC_DB_URL: jdbc:postgresql://host.docker.internal:5432/keycloakDB_microservices_learning
+      KC_DB_URL: jdbc:postgresql://host.docker.internal:5432/keycloakDB_EVA
       KC_DB_USERNAME: postgres
       KC_DB_PASSWORD: password
 
