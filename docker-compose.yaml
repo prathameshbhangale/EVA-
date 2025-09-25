@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  keycloak:
+    container_name: keycloak-EVA
+    image: quay.io/keycloak/keycloak:26.3.3
+    command: start-dev
+    environment:
+      # Database settings
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://host.docker.internal:5432/keycloakDB_microservices_learning
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: password
+
+      # Keycloak admin credentials
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin123
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
